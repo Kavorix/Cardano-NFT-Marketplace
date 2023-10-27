@@ -56,6 +56,9 @@ export const HistoryTableRow = styled.div`
     font-family: Open Sans;
     font-weight: 600;
     width: 30%;
+    white-space: nowrap;
+    overflow: hidden!important;
+    text-overflow: ellipsis;
   }
   div:nth-child(4){
     color: #6073F6;
@@ -63,6 +66,9 @@ export const HistoryTableRow = styled.div`
     font-family: Open Sans;
     font-weight: 600;
     width: 30%;
+    white-space: nowrap;
+    overflow: hidden!important;
+    text-overflow: ellipsis;
   }
   div:nth-child(5){
     color: black;
@@ -70,17 +76,23 @@ export const HistoryTableRow = styled.div`
     font-family: Open Sans;
     font-weight: 600;
     width: 15%;
+    white-space: nowrap;
+    overflow: hidden!important;
+    text-overflow: ellipsis;
   }
 `
 
 export const SelectButtonGroup = styled.div`
-display: flex;
-width: 240px;
-flex-direction: column;
-align-items: flex-start;
-border-radius: 3px;
-border: 1px solid var(--periwinkle-500, #6073F6);
-background: var(--periwinkle-100, linear-gradient(0deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.88) 100%), #6073F6);
+  display: flex;
+  width: 240px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 3px;
+  border: 1px solid var(--periwinkle-500, #6073F6);
+  background: var(--periwinkle-100, linear-gradient(0deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.88) 100%), #6073F6);
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 export const SelectButton = styled.div`
@@ -103,6 +115,10 @@ export const SelectButton = styled.div`
   }
   &:hover{
     background-color: #eeeeee;
+  }
+  @media screen and (max-width: 768px) {
+    height: 42px;
+    width: 100%;
   }
 
 `
