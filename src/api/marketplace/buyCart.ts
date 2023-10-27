@@ -2,7 +2,6 @@ import { Blockfrost, Constr, Data, Lucid, fromHex, toHex } from "lucid-cardano";
 import data from './plutus.json';
 import { encode } from 'cbor-x';
 export const buyCart = async (walletAddress: string, utxoValues: string[]) => {
-    console.log("utxoValues", utxoValues)
     try {
         const lucid = await Lucid.new(
             new Blockfrost("https://cardano-mainnet.blockfrost.io/api/v0",
@@ -40,13 +39,9 @@ export const buyCart = async (walletAddress: string, utxoValues: string[]) => {
             walletAddress
         );
 
-
-
-
         var redeemerRequest = Data.to(
             new Constr(1, [])
         )
-
 
         const CartUtxos = utxoValues.sort() //this is the array of utxos of nfts I want to buy
 
