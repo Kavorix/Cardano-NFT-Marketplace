@@ -172,9 +172,6 @@ export const buyCart = async (walletAddress: string, utxoValues: string[]) => {
 
             console.log("priceRoyalty", priceRoyalty)
 
-
-
-
             tx = await tx.collectFrom(utxo, redeemerRequest)
                 .payToAddress(addressSeller, price)
                 .payToAddress(addressMarketplace, priceFee)
