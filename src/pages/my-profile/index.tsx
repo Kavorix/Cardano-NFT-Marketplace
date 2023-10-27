@@ -16,7 +16,7 @@ import { useWalletConnect } from 'context/WalletConnect'
 import { useMedia } from 'react-use'
 
 const ProfileHeaderBanner = styled.div`
-  background-image: url('/assets/images/background/my_profile_header.svg');
+  background-image: url('/assets/images/background/my_profile_header.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -238,7 +238,7 @@ const MyProfile = () => {
                 <CustomText
                   smFontSize='12px'
                   fontWeight='600'
-                  text={`Ciybtrt`}
+                  text={`Country`}
                   fontFamily='Open Sans'
                 />
                 <CustomText
@@ -247,6 +247,9 @@ const MyProfile = () => {
                   color='#B92929'
                   text={userData && userData.user_location ? userData.user_location : ''}
                   fontFamily='Open Sans'
+                  maxWidth='63px'
+                  smDisplay='block'
+                  className='three-dots'
                 />
               </FlexBox>
               <FlexBox direction='column' gap='10px' alignItems='center' smWidth='auto'>
@@ -256,12 +259,12 @@ const MyProfile = () => {
                   text={`Wallet Address`}
                   fontFamily='Open Sans'
                 />
-                <CustomText
-                  smFontSize='16px'
-                  fontWeight='700'
-                  color='#B92929'
-                  text={userData && userData.user_location ? userData.user_location : ''}
-                  fontFamily='Open Sans'
+                
+                <CopyBoard
+                  addr={
+                    myWalletAddress && myWalletAddress
+                  }
+                  maxWidth='100px'
                 />
               </FlexBox>
 

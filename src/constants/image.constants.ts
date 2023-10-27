@@ -69,24 +69,24 @@ export const WALLET_ICON = "/assets/images/icons/wallet.svg"
 
 export const CART_ICON = "/assets/images/icons/cart.svg"
 
-export const HOME_HEADER1_IMAGE = "/assets/images/background/home_header1.svg";
-export const HOME_HEADER2_IMAGE = "/assets/images/background/home_header2.svg";
+export const HOME_HEADER1_IMAGE = "/assets/images/background/home_header1.png";
+export const HOME_HEADER2_IMAGE = "/assets/images/background/home_header2.png";
 export const HOME_HEADER3_IMAGE = "/assets/images/background/home_header3.png";
-export const HOME_HEADER4_IMAGE = "/assets/images/background/home_header4.svg";
-export const HOME_HEADER5_IMAGE = "/assets/images/background/home_header5.svg";
+export const HOME_HEADER4_IMAGE = "/assets/images/background/home_header4.png";
+export const HOME_HEADER5_IMAGE = "/assets/images/background/home_header5.png";
 
-export const HOME_HEADER1_MOBILE_IMAGE = "/assets/images/background/home_header1_mobile.svg";
-export const HOME_HEADER2_MOBILE_IMAGE = "/assets/images/background/home_header2_mobile.svg";
-export const HOME_HEADER3_MOBILE_IMAGE = "/assets/images/background/home_header3_mobile.svg";
-export const HOME_HEADER4_MOBILE_IMAGE = "/assets/images/background/home_header4_mobile.svg";
-export const HOME_HEADER5_MOBILE_IMAGE = "/assets/images/background/home_header5_mobile.svg";
+export const HOME_HEADER1_MOBILE_IMAGE = "/assets/images/background/home_header1_mobile.png";
+export const HOME_HEADER2_MOBILE_IMAGE = "/assets/images/background/home_header2_mobile.png";
+export const HOME_HEADER3_MOBILE_IMAGE = "/assets/images/background/home_header3_mobile.png";
+export const HOME_HEADER4_MOBILE_IMAGE = "/assets/images/background/home_header4_mobile.png";
+export const HOME_HEADER5_MOBILE_IMAGE = "/assets/images/background/home_header5_mobile.png";
 
 export const REWARDS_HEADER_IMAGE = "/assets/images/background/rewards_header.svg"
 
-export const RAFFLE_HEADER_IMAGE = "/assets/images/background/raffle_header.svg";
-export const POLLS_HEADER_IMAGE = "/assets/images/background/polls_header.svg";
-export const MARKETPLACE_HEADER_IMAGE = "/assets/images/background/marketplace_header.svg";
-export const SPEC_COLLECTION_HEADER_IMAGE = "/assets/images/background/spec_collection_header.svg";
+export const RAFFLE_HEADER_IMAGE = "/assets/images/background/raffle_header.png";
+export const POLLS_HEADER_IMAGE = "/assets/images/background/polls_header.png";
+export const MARKETPLACE_HEADER_IMAGE = "/assets/images/background/marketplace_header.png";
+export const SPEC_COLLECTION_HEADER_IMAGE = "/assets/images/background/spec_collection_header.png";
 
 export const COLLECTION_IMAGES = {
     "49b4109aa40548dd55dd106ce58003c9601da016992cc276ed880cd0" :{

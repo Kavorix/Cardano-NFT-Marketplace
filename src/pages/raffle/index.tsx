@@ -203,14 +203,14 @@ const Raffle = () => {
           policyId,//ADA byte array vuoto
           asset,//amount
           // @ts-ignore
-          amount, //amount
+          BigInt(amount), //amount
           fromHex(formData.title + "-" + floor(formData.minTicket) + "/" + floor(formData.maxTicket)),
           fromHex(getExactImageFormat(formData.selectedNFTs[0].image)),
           fromHex(formData.description),//hours in ms
           // @ts-ignore
-          posix,
+          BigInt(posix),
           // @ts-ignore
-          0,//here is always 0. no more drafts
+          BigInt(0),//here is always 0. no more drafts
           // @ts-ignore
           exclusiveFlag,
           // @ts-ignore

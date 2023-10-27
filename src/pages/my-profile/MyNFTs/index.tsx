@@ -74,10 +74,10 @@ const MyNFTs = () => {
 
   const isMobile = useMedia('(max-width: 768px)');
 
-  const getJpgStoreListedData = async () => {
-    const jpgStoreListedData = await getMyListedNFTsFromJPGStore(myWalletAddress)
-    setMyJPGStoreData(jpgStoreListedData)
-  }
+  // const getJpgStoreListedData = async () => {
+  //   const jpgStoreListedData = await getMyListedNFTsFromJPGStore(myWalletAddress)
+  //   setMyJPGStoreData(jpgStoreListedData)
+  // }
 
   // get my listed nft data
   const getListedData = async () => {
@@ -180,7 +180,7 @@ const MyNFTs = () => {
     // call getListedData if myWalletAddress is set
     if (myWalletAddress) {
       getListedData();
-      getJpgStoreListedData();
+      // getJpgStoreListedData();
     }
   }, [myWalletAddress]);
 

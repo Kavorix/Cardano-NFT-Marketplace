@@ -1,5 +1,5 @@
-import { Suspense, createContext } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { Suspense, createContext, useEffect } from 'react';
+import { BrowserRouter, useLocation } from 'react-router-dom';
 
 // import ErrorBoundary from './components/ErrorBoundary';
 import 'index.css';
@@ -23,11 +23,21 @@ function App() {
   const contextValues = {
     flag
   }
+  function ScrollToTop() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+  }
   return (
     <>
       <GlobalProvider.Provider value={contextValues}>
         <ThemeProvider theme={lightTheme}>
           <BrowserRouter>
+            <ScrollToTop />
             <Suspense fallback={<AppLoader />}>
               <MainRouter />
               <ToastContainer />
