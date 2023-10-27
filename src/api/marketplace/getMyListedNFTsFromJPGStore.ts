@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getMyListedNFTsFromJPGStore = async (address: string) => {
     try {
-        const url = "https://lqq89mso8h.execute-api.eu-west-2.amazonaws.com/default/get-external-listings?address=" + address;
+        const url = `${process.env.REACT_APP_GET_MY_JPGSTORE_LISTED_NFTS}?address=${address}`;
         const response = await axios.get(url);
         console.log("response", response)
         if (response) {

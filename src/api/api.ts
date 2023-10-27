@@ -1,5 +1,6 @@
 import axios from "axios";
 import { infoAlert } from "hooks/alert";
+
 /**
  * The function `updateUserProfile` sends a POST request to an API endpoint with the provided request
  * data and returns the response.
@@ -8,9 +9,8 @@ import { infoAlert } from "hooks/alert";
  * @returns The response from the API call is being returned.
  */
 export const updateUserProfile = async (reqData) => {
-    console.log("reqData", reqData);
     try {
-        const url = "https://djh3mz54gi.execute-api.us-west-2.amazonaws.com/users";
+        const url = process.env.REACT_APP_UPDATE_USER_URL;
         const response = await axios.post(url, JSON.stringify(reqData));
         if (response) {
             // if (response.status === 200) {
@@ -18,7 +18,7 @@ export const updateUserProfile = async (reqData) => {
             return response.data;
         }
     } catch (err) {
-        console.log("err", err)
+        console.log("Error updateUserProfile", err)
     }
 }
 
@@ -29,18 +29,15 @@ export const updateUserProfile = async (reqData) => {
  * @returns the data obtained from the API request.
  */
 export const getUserDatabyAddress = async (address: string) => {
-    const url = "https://qru4p76ipi.execute-api.us-west-2.amazonaws.com/items/" + address;
-    const options = {
-        url: url
-    };
+    const url = process.env.REACT_APP_GET_USER_DATA_URL + address;
     try {
-        const response = await axios.request(options);
+        const response = await axios.get(url);
         if (response) {
             return response.data;
         }
 
     } catch (error) {
-        console.error("getEvents err", error);
+        console.error("Error getUserDatabyAddress", error);
     }
 }
 
@@ -53,7 +50,7 @@ export const getUserDatabyAddress = async (address: string) => {
  */
 export const getUserPoints = async () => {
     try {
-        const url = "https://qru4p76ipi.execute-api.us-west-2.amazonaws.com/items"
+        const url = process.env.REACT_APP_GET_USER_DATA_URL
         const response = await axios.get(url);
         const data = response.data; // Access the data property of the Axios response
 
@@ -75,7 +72,7 @@ export const getUserPoints = async () => {
  * @returns the length of the data array.
  */
 export const getTotalUserNumber = async () => {
-    const { data } = await axios.get("https://4to25v4y9l.execute-api.us-west-2.amazonaws.com/items");
+    const { data } = await axios.get(process.env.REACT_APP_GET_TOTAL_USER_NUM_URL);
     if (data) {
         return data.length
     }
@@ -90,7 +87,7 @@ export const getTotalUserNumber = async () => {
  */
 export const getNFTDetailByAsset = async (asset: string) => {
     try {
-        const url = "https://fk6vsmvml8.execute-api.eu-west-2.amazonaws.com/default/getNFTinfo?unit=" + asset
+        const url = process.env.REACT_APP_GET_NFT_DETAIL_URL + asset
         const response = await axios.get(url);
         const data = response.data; // Access the data property of the Axios response
         return data

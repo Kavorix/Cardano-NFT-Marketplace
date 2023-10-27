@@ -128,7 +128,7 @@ const Raffle = () => {
             "https://api.opencnft.io/2/collection/" + _policyID + "/floor_price",
             {
               headers: {
-                'X-Api-Key': 'ocnft_6478b2360e42f6648c04c200',
+                'X-Api-Key': process.env.REACT_APP_OPENCNFT_API_KEY,
                 "Content-Type": "application/json",
                 "Access-Control-Allow-Origin": "http://localhost:3000",
                 "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",

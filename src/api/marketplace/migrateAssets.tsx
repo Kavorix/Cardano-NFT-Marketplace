@@ -3,7 +3,7 @@ import { Constr, Data, Lucid, fromHex, toHex } from "lucid-cardano";
 import data from './plutus.json';
 
 export const migrateAssets = async (
-    address: string, lucid: Lucid, utxoValue: string, assets: string[]
+    address: string, lucid: Lucid, utxoValue: string, assets: string[], listPrice: number
 ) => {
 
     console.log("utxoValue", utxoValue, assets)
@@ -67,7 +67,7 @@ export const migrateAssets = async (
         //NOW LET'S SET 
 
         //YOU GET THIS PRICE FROM THE API OF EXTERNAL LISTING!!!
-        let price = 1000000000
+        let price = listPrice * 1000000
         let fee = 199 * price / 10000
 
 
