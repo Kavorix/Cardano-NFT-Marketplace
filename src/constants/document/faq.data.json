@@ -1,0 +1,67 @@
+[
+  {
+    "question": "What is an NFT? ",
+    "answer": "NFT stands for non-fungible token. That may sound like an intimidating technical term, but NFTs are just digital certificates of authenticity that prove ownership of a unique digital asset like art, music, collectibles, videos or anything else with blockchain technology.",
+    "visible": false
+  },
+  {
+    "question": "What is a wallet? ",
+    "answer": "A crypto wallet is a software on a blockchain (such as Cardano) that stores your cryptocurrency, private keys and other crypto assets—including NFTs. A crypto wallet lets you create on-chain transactions, sign transactions, add funds to your wallet and sell or buy NFTs. Your crypto wallet is your gateway to Web3 because it lets you connect to a decentralized application (dApp) like Crashr. An example of a crypto wallet is Nami.",
+    "visible": false
+  },
+  {
+    "question": "Which Cardano wallets can I use?",
+    "answer": "Nami, Eternal, Flint, Yoroi, Begin, Typhon, Gero, Nufi can be connected and used on Crashr. More wallets will be implemented in the future. ",
+    "visible": false
+  },
+  {
+    "question": "How do I create a Cardano wallet?",
+    "answer": "A user-friendly wallet to create on a desktop for beginners is Nami wallet. <a href='https: //namiwallet.io/' target= '_blank'>https: //namiwallet.io/</a>",
+    "visible": false
+  },
+  {
+    "question": "What currencies does CRASHR use?",
+    "answer": "The main currency of Crashr is ADA. We will be implementing the use of Cardano native tokens in the near future.  ",
+    "visible": false
+  },
+  {
+    "question": "Does CRASHR use smart contracts?",
+    "answer": "Yes, all transactions are On-Chain. ",
+    "visible": false
+  },
+  {
+    "question": "Is there any collateral?",
+    "answer": "No, there is 0 collateral as our smart contracts are plutus v2. ",
+    "visible": false
+  },
+  {
+    "question": "Can anyone start a raffle? ",
+    "answer": "Yes, any user on our platform has access to use our raffle system to auction off their assets.",
+    "visible": false
+  },
+  {
+    "question": "If I start a raffle can I cancel it? ",
+    "answer": "If your Raffle does not hit the minimum amount you chose, you can decide to refund all users and cancel. If your raffle is/above the minimum amount of tickets, you will not be able to cancel. ",
+    "visible": false
+  },
+  {
+    "question": "Will I be able to use cardano native tokens for raffles? ",
+    "answer": "Yes, you will be able to choose which Tokens and the amount you will like to raffle out your asset with.",
+    "visible": false
+  },
+  {
+    "question": "Can anyone use the voting system? ",
+    "answer": "Yes, anyone can use the voting system and create polls for any topics in the space. ",
+    "visible": false
+  },
+  {
+    "question": "How many voting proposals am I allowed to do? ",
+    "answer": "You are allowed to create unlimited voting proposals! ",
+    "visible": false
+  },
+  {
+    "question": "How do you vote on a proposal? ",
+    "answer": "You vote on a proposal by using the token currency selected for the proposal 1 Token = 1 Vote. Once you vote, your token/tokens will be locked up for the remainder of the proposal then refunded back when the proposal ends.",
+    "visible": false
+  }
+]

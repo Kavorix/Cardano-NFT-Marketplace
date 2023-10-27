@@ -1,0 +1,5 @@
+export const CRAHSR_FOUNDER_ADDRESSES = [
+  // Centario
+  "addr1q9re6zqsvxdv2q2exzys0zzhupr49ww9s9uadtrct485rrfp90l83p77rkegtec63mhnzjypvrzdwff53z3m9cy6k80sq2cwm3",
+  "addr1qx6t9lekhxce25xvfwe6quwl95u4vqmdk3j43zjyvzxj9p7ksjdge25uu0v80msy0a4vakla928d4dsssd0796ga2guqckmhgg"
+]
