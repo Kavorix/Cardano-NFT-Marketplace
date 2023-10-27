@@ -223,8 +223,6 @@ const PurchaseCartModal = ({ show, onClose, purchaseCarts }: Props) => {
                                 )
                             })
                         }
-                        asdfklaskdfasd
-
                     </ScrollFlex>
 
 
