@@ -42,7 +42,7 @@ const MarketListedNFTCard = ({
   //     const interval = setInterval(() => {
   //       // Move to the next nft
   //       setActiveNFT((nft) => (nft + 1) % listedNFTs.length);
-  //     }, 300); // Change slides every 1 (adjust as needed)
+  //     }, 500); // Change slides every 1 (adjust as needed)
 
   //     return () => {
   //       // Cleanup the interval when the component unmounts
