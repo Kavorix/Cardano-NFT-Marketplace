@@ -62,7 +62,7 @@ export const GlobalProvider = ({ children }: PropsWithChildren) => {
     user_location: '',
     user_bio: ''
   });
- 
+
   const [myTokens, setMyTokens] = useState();
   const [myRaffleData, setMyRaffleData] = useState([]);
 
@@ -88,7 +88,7 @@ export const GlobalProvider = ({ children }: PropsWithChildren) => {
   to the specified URL using the `axios` library. It then logs the response data to the console. */
   const getActiveVoting = useCallback(async () => {
     try {
-      const { data } = await axios.get("https://qb3dlws61a.execute-api.eu-west-2.amazonaws.com/default/crashr-get-specific-votes");
+      const { data } = await axios.get(process.env.REACT_APP_GET_ACTIVE_VOTING_URL);
 
       const filteredObj = Object.entries(data)
         .reduce((acc, [key, value]) => {
@@ -136,7 +136,7 @@ export const GlobalProvider = ({ children }: PropsWithChildren) => {
    * policy ID.
    */
   const getMyNFTsData = async () => {
-    const url_get_nft = "https://4y90ofqzdi.execute-api.eu-west-2.amazonaws.com/default/crashr-getNFTs?address="
+    const url_get_nft = `${process.env.REACT_APP_GET_MY_NFTS_URL}?address=`
 
     await axios
       .get(
@@ -198,10 +198,10 @@ export const GlobalProvider = ({ children }: PropsWithChildren) => {
   const getMyTokens = async () => {
     try {
       const { data } = await axios.get(
-        `https://qzkubt0k1g.execute-api.eu-west-2.amazonaws.com/default/getWalletInfo?address=${myWalletAddress}`
+        `${process.env.REACT_APP_GET_MY_TOKENS_URL}?address=${myWalletAddress}`
       );
 
-      const result = await axios.get('https://api.coingecko.com/api/v3/simple/price?ids=cardano&vs_currencies=usd');
+      const result = await axios.get(process.env.REACT_APP_ADA_USD_EXCHANGE_RATE);
       let exchangeRate = result.data.cardano.usd
       // console.log("result.data.cardano.usd", exchangeRate)
       let obj = {};
@@ -234,7 +234,7 @@ export const GlobalProvider = ({ children }: PropsWithChildren) => {
    */
   const getWinRaffles = async () => {
     try {
-      const { data } = await axios.get("https://13d48577ad.execute-api.eu-west-2.amazonaws.com/default/winnersHistory")
+      const { data } = await axios.get(process.env.REACT_APP_WINNER_HISTORY_URL)
       // console.log("win raffle data", data)
 
 
@@ -261,8 +261,8 @@ export const GlobalProvider = ({ children }: PropsWithChildren) => {
   const getRaffleData = useCallback(async () => {
     try {
       const [response1, response2] = await Promise.all([
-        axios.get("https://13d48577ad.execute-api.eu-west-2.amazonaws.com/default/winnersHistory"),
-        axios.get("https://9gzvv9ito0.execute-api.eu-west-2.amazonaws.com/default/crashr-get-activeRaffles")
+        axios.get(process.env.REACT_APP_WINNER_HISTORY_URL),
+        axios.get(process.env.REACT_APP_GET_ACTIVE_RAFFLES_URL)
       ]);
 
       const data1 = response1.data;
@@ -300,7 +300,7 @@ export const GlobalProvider = ({ children }: PropsWithChildren) => {
    */
   const getMyRaffleData = async () => {
     try {
-      const { data } = await axios.get(`https://0kbipledzi.execute-api.eu-west-2.amazonaws.com/default/crashr-my-raffles?address=${myWalletAddress}`);
+      const { data } = await axios.get(`${process.env.REACT_APP_GET_MY_RAFFLE_URL}?address=${myWalletAddress}`);
 
       setMyRaffleData(Object.values(data).slice().reverse())
 
@@ -314,7 +314,7 @@ export const GlobalProvider = ({ children }: PropsWithChildren) => {
    * the result in state variables.
    */
   const getFloorPriceList = async () => {
-    const { data } = await axios.get("https://dxwnceajni.execute-api.us-west-2.amazonaws.com/items")
+    const { data } = await axios.get(process.env.REACT_APP_GET_FLOOR_PRICE_LIST_URL)
 
     const result = data.reduce((acc, obj) => {
       acc[obj.id] = obj;
@@ -334,7 +334,7 @@ export const GlobalProvider = ({ children }: PropsWithChildren) => {
    * call and updates the state with the retrieved data.
    */
   const getMyRaffleEntries = async () => {
-    const res = await axios.get("https://nazmrra9qf.execute-api.us-west-2.amazonaws.com/items/" + myWalletAddress);
+    const res = await axios.get(process.env.REACT_APP_GET_MY_RAFFLE_ENTRIES_URL + myWalletAddress);
     if (res.data !== '') {
       setMyRaffleEntries(JSON.parse(res.data.transactions))
     }
@@ -393,7 +393,6 @@ export const GlobalProvider = ({ children }: PropsWithChildren) => {
 
   useEffect(() => {
     getAllNFTListing()
-    // // first immediate call
     getRaffleData();
     getFloorPriceList();
     getActiveVoting();

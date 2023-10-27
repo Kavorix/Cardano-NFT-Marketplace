@@ -49,7 +49,7 @@ const TopCollections = () => {
         url,
         {
           headers: {
-            'X-Api-Key': 'ocnft_6478b2360e42f6648c04c200'
+            'X-Api-Key': process.env.REACT_APP_OPENCNFT_API_KEY
           }
         }
       );

@@ -113,10 +113,9 @@ export const listNFTByAddress = async (
  */
 export const getMyNFTListing = async (address: string) => {
   try {
-    const url = `https://ociyc78ujg.execute-api.eu-west-2.amazonaws.com/default/crashrs-get-my-listing?address=${address}`;
+    const url = `${process.env.REACT_APP_GET_MY_LISTED_NFTS_URL}${address}`;
     const response = await axios.get<ListedNFTList>(url);
     const data: ListedNFTList = response.data;
-    // const filteredDataObject: ListedNFTList = Object.fromEntries(Object.entries(data).filter(([, value]) => value.seller === address));
     return data;
   } catch (error) {
     console.error("Error getMyNFTListing:", error);
@@ -131,7 +130,7 @@ export const getMyNFTListing = async (address: string) => {
  */
 export const getAllListing = async () => {
   try {
-    const url = `https://4jt5a9tip1.execute-api.eu-west-2.amazonaws.com/default/crashr-get-collections?policy=all`;
+    const url = `${process.env.REACT_APP_GET_ALL_LISTING_URL}?policy=all`;
     const response = await axios.get<ListedNFTList>(url);
     const data: ListedNFTList = response.data;
     return data;
@@ -142,7 +141,7 @@ export const getAllListing = async () => {
 
 export const getListedNFTsByPolicy = async (policyID: string) => {
   try {
-    const url = `https://4jt5a9tip1.execute-api.eu-west-2.amazonaws.com/default/crashr-get-collections?policy=${policyID}`;
+    const url = `${process.env.REACT_APP_GET_ALL_LISTING_URL}?policy=${policyID}`;
     const response = await axios.get<ListedNFTList>(url);
     const data: ListedNFTList = response.data;
     return data;

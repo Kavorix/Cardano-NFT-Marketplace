@@ -506,7 +506,7 @@ const RaffleDetailModal = ({ show, onClose, formData, raffleDetailData }: Props)
           "https://api.opencnft.io/2/collection/" + policyID_arr[i].slice(0, 56) + "/floor_price",
           {
             headers: {
-              'X-Api-Key': 'ocnft_6478b2360e42f6648c04c200'
+              'X-Api-Key': process.env.REACT_APP_OPENCNFT_API_KEY
             }
           }
         );

@@ -10,7 +10,7 @@ import CustomText from 'components/common/CustomText';
 import { H3, H8 } from 'components/typography';
 import { getExactImageFormat } from 'hooks/function';
 import CustomInput from 'components/common/CustomInput';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useWalletConnect } from 'context/WalletConnect';
 import { COLLECTION_DATA } from 'constants/document';
 
@@ -71,6 +71,15 @@ const EditListingModal = ({ show, onClose, activeEditData, editNFT }: Props) => 
   )
   const [feeAmount, setFeeAmount] = useState<number>(1);
   const { myWalletAddress, lucid } = useWalletConnect();
+
+  useEffect(() => {
+    if ((inputPrice * 0.0199) < 1) {
+      setFeeAmount(1)
+    } else {
+      const fee = inputPrice * 0.0199
+      setFeeAmount(fee)
+    }
+  }, [inputPrice])
   return (
 
     <StyledModal show={show} onHide={onClose} centered contentClassName="connect-success-content">

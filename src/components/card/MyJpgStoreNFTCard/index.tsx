@@ -2,7 +2,7 @@ import CustomBorderButton from 'components/common/CustomBorderButton'
 import CustomImage from 'components/common/CustomImage'
 import CustomText from 'components/common/CustomText'
 import { FlexBox } from 'components/common/FlexBox'
-import { JpgStoreBadge, MyJpgStoreNFTCardStyle } from './index.styled';
+import { JpgStoreBadge, BundleBadge, MyJpgStoreNFTCardStyle } from './index.styled';
 import CustomButton from 'components/common/CustomButton';
 import { useWalletConnect } from 'context/WalletConnect';
 import { migrateAssets } from 'api/marketplace/migrateAssets';
@@ -23,6 +23,13 @@ const MyJpgStoreNFTCard = ({
             <JpgStoreBadge
                 src={`/assets/images/icons/jpg-logo.svg`}
             />
+            {
+                data.bundled_assets.length > 0 &&
+                <BundleBadge>
+                    Bundle
+                </BundleBadge>
+            }
+
             <CustomImage
                 image={`https://image-optimizer.jpgstoreapis.com/${data.source}`}
                 width='256px'
@@ -47,6 +54,13 @@ const MyJpgStoreNFTCard = ({
                     className='three-dots'
                     display='block'
                 />
+                <CustomText
+                    text={`₳${parseInt(data.price_lovelace) / 1000000}`}
+                    fontSize='28px'
+                    fontWeight='600'
+                    color='#6073F6'
+                    fontFamily='Open Sans'
+                />
 
             </FlexBox>
 
@@ -66,7 +80,7 @@ const MyJpgStoreNFTCard = ({
                     hoverBgColor='linear-gradient(to right, #1154c8 , #63374e)'
                     boxShadow='0px 2px 10px 0px rgba(255, 255, 255, 0.30)'
                     onClick={() => {
-                        migrateAssets(myWalletAddress, lucid, data.utxo.replace(/#0$/, ''), data.bundled_assets.length > 0 ? data.bundled_assets.map((item) => item.asset_id) : [data.asset_id])
+                        migrateAssets(myWalletAddress, lucid, data.utxo.replace(/#0$/, ''), data.bundled_assets.length > 0 ? data.bundled_assets.map((item) => item.asset_id) : [data.asset_id], parseInt(data.price_lovelace) / 1000000)
                     }}
                 />
             }

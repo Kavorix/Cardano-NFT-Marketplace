@@ -105,7 +105,7 @@ const MyProfile = () => {
                 <CustomText
                   fontSize='16px'
                   fontWeight='600'
-                  text={`Location`}
+                  text={`Country`}
                   fontFamily='Open Sans'
                 />
                 <CustomText
@@ -238,7 +238,7 @@ const MyProfile = () => {
                 <CustomText
                   smFontSize='12px'
                   fontWeight='600'
-                  text={`Location`}
+                  text={`Ciybtrt`}
                   fontFamily='Open Sans'
                 />
                 <CustomText

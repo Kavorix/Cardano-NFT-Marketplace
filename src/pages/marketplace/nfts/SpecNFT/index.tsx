@@ -29,8 +29,8 @@ const history = [
 const selectButtons = [
   "Purchase Now",
   "Make an Offer",
-  "Buy with Credit Card",
-  "Buy with ETH",
+  // "Buy with Credit Card",
+  // "Buy with ETH",
 ]
 
 const SpecNFT = () => {
